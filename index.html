@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<meta name="theme-color" content="#9bd5dd" />
+<title>Hollowlight — The Lost Grove</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body>
+<main id="game">
+  <div id="loading"><span class="sun-mark">✦</span><span>Waking the grove…</span></div>
+  <canvas id="world" aria-label="3D adventure game"></canvas>
+  <div class="vignette"></div>
+  <header class="topbar">
+    <div class="brand"><div class="brand-seal">✦</div><div><div class="brand-name">HOLLOWLIGHT</div><div class="brand-sub">THE LOST GROVE</div></div></div>
+    <div class="quest-card"><div class="quest-icon">✧</div><div><div class="quest-kicker">YOUR JOURNEY</div><div id="quest-text">Find the three sunshards</div></div><div class="shard-count"><span id="shard-count">0</span><i>/ 3</i></div></div>
+    <div class="status-card"><div class="status-label">VITALITY</div><div id="hearts" class="hearts" aria-label="3 hearts">♥ ♥ ♥</div><div id="status-hint" class="status-hint">A quiet breeze stirs…</div></div>
+  </header>
+  <div class="location"><span class="location-dot"></span><span id="location-name">THE EMERALD ISLE</span><span class="location-line"></span><span id="daytime">DAY 01 · 08:42</span></div>
+  <div class="bottom-ui">
+    <div class="controls-hint"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><span class="hint-copy">MOVE</span><span class="hint-divider"></span><span class="keycap wide">SPACE</span><span class="hint-copy">STRIKE</span></div>
+    <div id="toast" class="toast"></div>
+    <div class="mobile-controls">
+      <div id="joystick" class="joystick"><div class="joy-ring"><div id="joy-knob" class="joy-knob"></div></div><span class="joy-label">MOVE</span></div>
+      <button id="attack" class="attack-btn" aria-label="Strike"><span>⚔</span><small>STRIKE</small></button>
+    </div>
+    <div class="corner-note"><span>✦</span> A small world awaits</div>
+  </div>
+  <div id="intro" class="intro-screen">
+    <div class="intro-card"><div class="intro-emblem">✦</div><div class="eyebrow">A TALE OF THE EMERALD ISLE</div><h1>The Lost<br><em>Sunshards</em></h1><p>The old shrine has gone dark. Find the three sunshards hidden across the grove, and bring their light home.</p><div class="intro-meta"><span>✧ &nbsp; EXPLORE</span><span>✧ &nbsp; GATHER</span><span>✧ &nbsp; RESTORE</span></div><button id="begin" class="begin-btn">ENTER THE GROVE <span>→</span></button><div class="intro-foot">WASD / ARROWS TO MOVE &nbsp; · &nbsp; SPACE TO STRIKE</div></div>
+  </div>
+  <div id="end-screen" class="end-screen hidden"><div class="end-card"><div class="intro-emblem">✦</div><div class="eyebrow">THE GROVE REMEMBERS</div><h2>Light returns<br><em>to the isle.</em></h2><p>The shrine glows once more. Somewhere, a new path is opening…</p><button id="play-again" class="begin-btn">KEEP EXPLORING <span>→</span></button></div></div>
+</main>
+<script type="module" src="game.js"></script>
+</body>
+</html>
